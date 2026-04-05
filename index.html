@@ -1,286 +1,683 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="only light">
-  <meta name="theme-color" content="#f6f4f0">
-  <title>Privacy Policy — Miru</title>
-  <meta name="description" content="Read the Miru Privacy Policy. Learn how Miru handles your data, privacy, subscriptions and app information.">
-  <link rel="canonical" href="https://miru.app/privacy">
-  <meta name="robots" content="index, follow">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #1a1a1a;
-      --paper: #f6f4f0;
-      --stone: #d4cfc7;
-      --mist: #e8e4dd;
-      --accent: #c45d3e;
-      --sage: #7a8b6f;
-      --warm-gray: #6b635b;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'DM Sans', sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="theme-color" content="#f6f4f0">
+
+<!-- SEO: Primary meta tags -->
+<title>Miru — Habit Tracker for macOS and iOS | ML-Powered Habit Insights</title>
+<meta name="description" content="Miru is a ML-powered habit tracker built natively for macOS and iOS. Discover hidden habit patterns with machine learning and chain analysis. Track habits, tasks and productivity. Download free.">
+<link rel="canonical" href="https://getmiru.net/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Miru">
+<meta name="keywords" content="habit tracker, habit tracker for Mac, macOS habit tracker, iOS habit tracker, habit tracker for iPhone, ML habit tracker, AI habit tracker, productivity app, daily routine tracker, habit analytics, habit chain discovery, data driven habit tracker, desktop habit tracker">
+
+<!-- SEO: Open Graph -->
+<meta property="og:title" content="Miru — ML-Powered Habit Tracker for macOS and iOS">
+<meta property="og:description" content="Discover hidden patterns in your habits. Miru uses machine learning to show what drives your best days. Free download.">
+<meta property="og:image" content="https://getmiru.net/images/og-image.png">
+<meta property="og:url" content="https://getmiru.net/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Miru">
+<meta property="og:locale" content="en_US">
+
+<!-- SEO: Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Miru — ML-Powered Habit Tracker for macOS and iOS">
+<meta name="twitter:description" content="Discover hidden patterns in your habits. Miru uses machine learning to show what drives your best days.">
+<meta name="twitter:image" content="https://getmiru.net/images/og-image.png">
+
+<!-- SEO: Favicon (replace with actual files) -->
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- SEO: Schema.org SoftwareApplication (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Miru",
+  "description": "An ML-powered macOS and iOS habit tracker that uses machine learning and habit chain discovery to reveal hidden patterns in your daily habits and productivity.",
+  "operatingSystem": "macOS",
+  "applicationCategory": "LifestyleApplication",
+  "softwareVersion": "1.0",
+  "downloadUrl": "https://apps.apple.com/app/miru/idXXXXXXXXX",
+  "featureList": "ML-powered habit insights, machine learning analysis, Habit chain discovery, Streak tracking, Friction scoring, Smart scheduling, Native macOS design, Privacy-first local data",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "description": "Free tier with unlimited habits. Premium at €3.99/month for ML insights."
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Miru",
+    "url": "https://getmiru.net"
+  }
+}
+</script>
+
+<!-- SEO: FAQ Schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes Miru different from other habit trackers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Miru uses a machine learning engine and habit chain discovery to reveal hidden patterns in your data. It shows which habits predict your best days with statistical confidence, not just streak counts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Miru free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Miru's free tier includes unlimited habits, tasks, friction scoring, streak tracking, energy-based recommendations and accountability partners. Premium (€3.99/month) unlocks Machine Learning-powered insights like productivity analysis and habit chain discovery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Miru work on Mac and iPhone only?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Miru is currently built natively for  and iOS, designed for productivity-focused individuals who spend their workday at a Mac or want to track their habits on their iPhone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does machine learning work in Miru?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "After 10 days of data, Miru’s Machine Learning Engine looks at your completed habits and productivity ratings to find which habits are most strongly linked to your best days. It also calculates conditional probabilities between habit pairs to discover chains. All processing happens on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All data stays on your device. Miru does not send your habit data to any server. The ML analysis runs locally using on-device computation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to build a habit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Research from University College London found it takes an average of 66 days to form a habit, with a range of 18 to 254 days depending on complexity. Miru's friction scoring helps you track this: when seven consecutive completions are rated 'easy,' the habit has likely become automatic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many habits should I track at once?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most experts recommend starting with 3 to 5 habits. Miru's Machine Learning Engine helps you identify which habits have the biggest impact so you can focus on what matters most."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is habit chain discovery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Using Miru’s Machine Learning Engine, habit chain discovery reveals how one habit can make another more likely. For example, Miru may find that you are three times more likely to exercise on days you meditate first."
+      }
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { color-scheme: only light; }
-    body {
-      font-family: var(--font-body);
-      background: var(--paper);
-      color: var(--ink);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(246,244,240,0.95);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--stone);
-    }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-    .nav-logo span {
-      margin-left: 0.45rem;
-      font-size: 0.85rem;
-      color: var(--warm-gray);
-      font-style: italic;
-    }
-    .nav-links { display: flex; gap: 1.5rem; }
-    .nav-links a {
-      font-size: 0.78rem;
-      color: var(--warm-gray);
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .hero {
-      padding: 5.5rem 1.5rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-kanji {
-      position: absolute;
-      inset: 50% auto auto 50%;
-      transform: translate(-50%, -55%);
-      font-size: clamp(5rem, 16vw, 11rem);
-      color: var(--mist);
-      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif;
-      font-weight: 300;
-      user-select: none;
-      pointer-events: none;
-    }
-    .hero-label {
-      position: relative;
-      font-size: 0.72rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 1.2rem;
-    }
-    .hero h1 {
-      position: relative;
-      font-family: var(--font-display);
-      font-size: clamp(2.7rem, 6vw, 4.5rem);
-      font-weight: 300;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      position: relative;
-      max-width: 640px;
-      margin: 0 auto;
-      color: var(--warm-gray);
-    }
-    .content {
-      max-width: 840px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 4rem;
-    }
-    .card {
-      background: rgba(232,228,221,0.45);
-      border: 1px solid var(--stone);
-      border-radius: 20px;
-      padding: 2rem 1.4rem;
-      margin-bottom: 1.25rem;
-    }
-    .meta {
-      display: inline-block;
-      margin-bottom: 0.9rem;
-      padding: 0.38rem 0.8rem;
-      border-radius: 999px;
-      background: var(--mist);
-      color: var(--warm-gray);
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    h2 {
-      font-family: var(--font-display);
-      font-size: 1.9rem;
-      font-weight: 400;
-      margin-bottom: 0.8rem;
-    }
-    p, li {
-      color: var(--warm-gray);
-      font-size: 0.95rem;
-    }
-    ul { padding-left: 1.15rem; margin-top: 0.5rem; }
-    a {
-      color: var(--ink);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .note {
-      margin-top: 0.8rem;
-      padding: 0.9rem 1rem;
-      background: rgba(122,139,111,0.08);
-      border: 1px solid rgba(122,139,111,0.18);
-      border-radius: 14px;
-      color: var(--warm-gray);
-      font-size: 0.9rem;
-    }
-    footer {
-      border-top: 1px solid var(--stone);
-      padding: 2rem 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-    .footer-logo { font-family: var(--font-display); font-size: 1.2rem; }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-    .footer-links a {
-      font-size: 0.78rem;
-      color: var(--warm-gray);
-      text-decoration: none;
-    }
-    .footer-copy { font-size: 0.72rem; color: var(--stone); }
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      footer { flex-direction: column; text-align: center; }
-    }
-  </style>
+  ]
+}
+</script>
+
+<!-- SEO: Organization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Miru",
+  "url": "https://getmiru.net",
+  "logo": "https://getmiru.net/images/miru-logo.png",
+  "sameAs": [
+    "https://twitter.com/trymiru"
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --paper: #f6f4f0;
+    --stone: #d4cfc7;
+    --mist: #e8e4dd;
+    --accent: #c45d3e;
+    --accent-soft: rgba(196, 93, 62, 0.08);
+    --sage: #7a8b6f;
+    --warm-gray: #6b635b; /* darkened from #8a8279 for WCAG AA contrast */
+    --indigo: #5856d6;
+    --purple: #8b5cf6;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; color-scheme: only light; }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #f6f4f0;
+    color: #1a1a1a;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed; top: 0; width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 100;
+    background-color: rgba(246, 244, 240, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid #d4cfc7;
+  }
+  .nav-logo { font-family: var(--font-display); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.02em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { font-weight: 300; font-style: italic; color: var(--warm-gray); font-size: 0.85rem; margin-left: 0.5rem; letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a { font-size: 0.82rem; color: var(--warm-gray); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { background: var(--ink) !important; color: var(--paper) !important; padding: 0.6rem 1.5rem; border-radius: 100px; transition: transform 0.3s, opacity 0.3s !important; }
+  .nav-cta:hover { transform: scale(1.03); opacity: 0.9; }
+
+  /* Hero */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 2rem 4rem; position: relative; background-color: #f6f4f0; }
+  .hero-kanji { font-size: clamp(6rem, 18vw, 14rem); font-family: var(--font-display); font-weight: 300; color: var(--mist); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -55%); user-select: none; pointer-events: none; opacity: 0; animation: kanjiFade 2s ease-out 0.3s forwards; }
+  @keyframes kanjiFade { from { opacity: 0; transform: translate(-50%, -50%) scale(0.95); } to { opacity: 1; transform: translate(-50%, -55%) scale(1); } }
+  .hero-label { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.8s ease-out 0.8s forwards; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 300; line-height: 1.1; max-width: 750px; position: relative; z-index: 2; opacity: 0; animation: fadeUp 1s ease-out 1s forwards; }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .hero-sub { font-size: 1.05rem; color: var(--ink); opacity: 0.7; max-width: 520px; line-height: 1.7; margin-top: 2rem; font-weight: 300; position: relative; z-index: 2; opacity: 0; animation: fadeUp 1s ease-out 1.3s forwards; }
+  .hero-buttons { display: flex; gap: 1rem; margin-top: 3rem; position: relative; z-index: 2; opacity: 0; animation: fadeUp 1s ease-out 1.5s forwards; }
+  .btn-primary { background: var(--ink); color: var(--paper); padding: 0.9rem 2.2rem; border-radius: 100px; text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.03em; transition: transform 0.3s, box-shadow 0.3s; border: none; cursor: pointer; display: inline-block; min-height: 44px; min-width: 44px; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .btn-secondary { background: rgba(26,26,26,0.06); color: var(--ink); padding: 0.9rem 2.2rem; border-radius: 100px; text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.03em; border: 1.5px solid var(--ink); transition: background 0.3s, transform 0.3s; cursor: pointer; min-height: 44px; }
+  .btn-secondary:hover { background: rgba(26,26,26,0.1); transform: translateY(-2px); }
+  .scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; opacity: 0; animation: fadeUp 1s ease-out 2s forwards; }
+  .scroll-hint span { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-gray); }
+  .scroll-line { width: 1px; height: 40px; background: var(--stone); position: relative; overflow: hidden; }
+  .scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; width: 100%; height: 100%; background: var(--accent); animation: scrollDown 2s ease-in-out infinite; }
+  @keyframes scrollDown { 0% { top: -100%; } 50% { top: 100%; } 100% { top: 100%; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Story */
+  .story { padding: 8rem 3rem; max-width: 680px; margin: 0 auto; background-color: #f6f4f0; }
+  .story-label { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 2.5rem; }
+  .story p { font-family: var(--font-display); font-size: 1.55rem; line-height: 1.65; font-weight: 300; color: var(--ink); margin-bottom: 1.8rem; }
+  .story p strong { font-weight: 500; color: var(--accent); }
+  .story-divider { width: 40px; height: 1px; background: var(--stone); margin: 3rem 0; }
+  
+  /* App overview */
+  .app-overview { padding: 6rem 3rem; background-color: #f6f4f0; }
+  .app-overview-inner { max-width: 1100px; margin: 0 auto; }
+  .app-overview-header { text-align: center; margin-bottom: 4rem; }
+  .app-overview-header h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 300; margin-bottom: 0.8rem; }
+  .app-overview-header p { color: var(--warm-gray); font-size: 0.95rem; font-weight: 300; }
+  .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+  .pillar { padding: 2rem 1.5rem; background: var(--mist); border-radius: 16px; border: 1px solid rgba(0,0,0,0.04); transition: transform 0.3s; }
+  .pillar:hover { transform: translateY(-3px); }
+  .pillar-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; }
+  .pillar h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; margin-bottom: 0.5rem; }
+  .pillar p { font-size: 0.82rem; line-height: 1.6; color: var(--warm-gray); font-weight: 300; }
+
+  /* Features */
+  .features { padding: 6rem 3rem 8rem; background: var(--ink); color: var(--paper); position: relative; }
+  .features::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 120px; background: linear-gradient(to bottom, var(--paper), transparent); pointer-events: none; z-index: 1; }
+  .features-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+  .features-header { text-align: center; margin-bottom: 5rem; padding-top: 3rem; }
+  .features-header h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 300; margin-bottom: 1rem; }
+  .features-header p { color: rgba(246,244,240,0.5); font-size: 0.95rem; font-weight: 300; }
+  .premium-badge { display: inline-block; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; padding: 0.3rem 1rem; border-radius: 100px; background: rgba(88,86,214,0.2); color: rgba(246,244,240,0.8); margin-bottom: 1.5rem; }
+  .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.06); }
+  .feature-card { padding: 2.8rem 2.2rem; background: var(--ink); transition: background 0.4s; }
+  .feature-card:hover { background: rgba(255,255,255,0.03); }
+  .feature-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; font-size: 1rem; }
+  .feature-card h3 { font-family: var(--font-display); font-size: 1.35rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--paper); }
+  .feature-card .method { font-size: 0.72rem; color: rgba(246,244,240,0.35); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.7rem; }
+  .feature-card p { font-size: 0.85rem; line-height: 1.7; color: rgba(246, 244, 240, 0.45); font-weight: 300; }
+
+  /* How it works */
+  .how { padding: 8rem 3rem; max-width: 900px; margin: 0 auto; background-color: #f6f4f0; }
+  .how-header { text-align: center; margin-bottom: 5rem; }
+  .how-header h2 { font-family: var(--font-display); font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 300; }
+  .steps { display: flex; flex-direction: column; }
+  .step { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 2.5rem 0; border-top: 1px solid var(--mist); align-items: start; }
+  .step-number { font-family: var(--font-display); font-size: 3rem; font-weight: 300; color: var(--stone); line-height: 1; }
+  .step h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.5rem; }
+  .step p { font-size: 0.9rem; line-height: 1.7; color: var(--warm-gray); font-weight: 300; }
+  .step .tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 100px; font-weight: 500; margin-top: 0.6rem; }
+  .tag-free { background: rgba(122, 139, 111, 0.12); color: var(--sage); }
+  .tag-premium { background: rgba(88, 86, 214, 0.1); color: var(--indigo); }
+
+  /* Science */
+  .science { padding: 6rem 3rem; max-width: 780px; margin: 0 auto; background-color: #f6f4f0; }
+  .science h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; text-align: center; margin-bottom: 2.5rem; }
+  .science p { font-size: 0.95rem; line-height: 1.8; color: var(--warm-gray); font-weight: 300; margin-bottom: 1.5rem; }
+  .science p strong { color: var(--ink); font-weight: 500; }
+  .science .privacy-note { display: flex; align-items: center; gap: 0.6rem; background: var(--mist); padding: 1rem 1.2rem; border-radius: 12px; margin-top: 2rem; }
+  .science .privacy-note svg { flex-shrink: 0; color: var(--sage); }
+  .science .privacy-note span { font-size: 0.85rem; color: var(--warm-gray); }
+
+  /* Pricing */
+  .pricing { padding: 6rem 3rem; background: var(--mist); }
+  .pricing-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .pricing-inner h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; margin-bottom: 0.8rem; }
+  .pricing-inner > p { color: var(--warm-gray); font-size: 0.95rem; font-weight: 300; margin-bottom: 3rem; }
+  .pricing-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; text-align: left; }
+  .pricing-card { background: var(--paper); border-radius: 20px; padding: 2.5rem 2rem; border: 1.5px solid transparent; transition: transform 0.3s, box-shadow 0.3s; }
+  .pricing-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+  .pricing-card.featured { border-color: var(--indigo); position: relative; }
+  .pricing-card.featured::before { content: 'Most Popular'; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--indigo), var(--purple)); color: white; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; padding: 0.3rem 1rem; border-radius: 100px; }
+  .pricing-card h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 500; margin-bottom: 0.3rem; }
+  .pricing-card .price { font-family: var(--font-display); font-size: 2.2rem; font-weight: 400; margin: 1rem 0 0.3rem; }
+  .pricing-card .price span { font-size: 0.9rem; color: var(--warm-gray); font-weight: 300; }
+  .pricing-card .price-note { font-size: 0.75rem; color: var(--warm-gray); margin-bottom: 1.5rem; }
+  .pricing-card ul { list-style: none; margin-bottom: 1.5rem; }
+  .pricing-card ul li { font-size: 0.85rem; color: var(--ink); opacity: 0.75; padding: 0.4rem 0; padding-left: 1.4rem; position: relative; font-weight: 300; }
+  .pricing-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--sage); font-weight: 500; }
+  .pricing-card.featured ul li::before { color: var(--indigo); }
+
+  /* FAQ */
+  .faq { padding: 6rem 3rem; max-width: 780px; margin: 0 auto; background-color: #f6f4f0; }
+  .faq h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; text-align: center; margin-bottom: 3rem; }
+  .faq-item { border-top: 1px solid var(--mist); padding: 1.5rem 0; }
+  .faq-item:last-child { border-bottom: 1px solid var(--mist); }
+  .faq-item h3 { font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 0.6rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 44px; }
+  .faq-item h3::after { content: '+'; font-size: 1.2rem; color: var(--stone); font-weight: 300; transition: transform 0.3s; }
+  .faq-item.open h3::after { transform: rotate(45deg); }
+  .faq-item p { font-size: 0.9rem; line-height: 1.7; color: var(--warm-gray); font-weight: 300; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; padding-top: 0; }
+  .faq-item.open p { max-height: 300px; padding-top: 0.3rem; }
+
+  /* Quote */
+  .quote-section { padding: 6rem 3rem; text-align: center; background-color: #f6f4f0; }
+  .quote-section blockquote { font-family: var(--font-display); font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 300; font-style: italic; max-width: 700px; margin: 0 auto; line-height: 1.5; color: var(--ink); }
+  .quote-section cite { display: block; margin-top: 1.5rem; font-family: var(--font-body); font-size: 0.8rem; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--warm-gray); }
+
+  /* CTA */
+  .cta { padding: 8rem 3rem; text-align: center; position: relative; background-color: #f6f4f0; }
+  .cta-kanji { font-size: clamp(5rem, 15vw, 12rem); font-family: var(--font-display); font-weight: 300; color: var(--mist); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); user-select: none; pointer-events: none; }
+  .cta h2 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; margin-bottom: 1rem; position: relative; z-index: 2; }
+  .cta h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .cta p { color: var(--warm-gray); font-size: 1rem; font-weight: 300; margin-bottom: 2.5rem; position: relative; z-index: 2; }
+  .cta .btn-primary { position: relative; z-index: 2; font-size: 0.95rem; padding: 1rem 2.8rem; }
+  .cta-note { font-size: 0.75rem; color: var(--stone); margin-top: 1rem; position: relative; z-index: 2; }
+
+  /* Footer */
+  footer { padding: 3rem; border-top: 1px solid var(--stone); display: flex; justify-content: space-between; align-items: center; background: var(--paper); position: relative; z-index: 1; }
+  .footer-logo { font-family: var(--font-display); font-size: 1.2rem; font-weight: 500; color: var(--ink); }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.78rem; color: var(--warm-gray); text-decoration: none; letter-spacing: 0.05em; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--ink); }
+  .footer-copy { font-size: 0.72rem; color: var(--stone); }
+  .nowrap {
+  white-space: nowrap;
+}
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav { padding: 1.2rem 1.5rem; }
+    .nav-links { display: none; }
+    .story { padding: 5rem 1.5rem; }
+    .app-overview { padding: 4rem 1.5rem; }
+    .pillars { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .features { padding: 4rem 1.5rem 6rem; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .how { padding: 5rem 1.5rem; }
+    .step { grid-template-columns: 50px 1fr; gap: 1.2rem; }
+    .science { padding: 4rem 1.5rem; }
+    .pricing { padding: 4rem 1.5rem; }
+    .pricing-cards { grid-template-columns: 1fr; }
+    .faq { padding: 4rem 1.5rem; }
+    .quote-section { padding: 4rem 1.5rem; }
+    .cta { padding: 5rem 1.5rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+  }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
 </head>
 <body>
-  <nav aria-label="Main navigation">
-    <a href="/" class="nav-logo">Miru <span>見る</span></a>
-    <div class="nav-links">
-      <a href="/terms">Terms</a>
-      <a href="/privacy">Privacy</a>
-      <a href="/">Home</a>
+
+<!-- SEO: Semantic nav element -->
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo" aria-label="Miru home">Miru <span>見る</span></a>
+  <div class="nav-links">
+    <a href="#story">Story</a>
+    <a href="#app">The App</a>
+    <a href="#insights">Insights</a>
+    <a href="#science">Science</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a class="nav-cta" href="#download">Download</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-kanji" aria-hidden="true">見る</div>
+  <div class="hero-label">macOS and iOS Habit Tracker with Machine Learning</div>
+  <!-- SEO: Single H1 with primary keyword -->
+  <h1>The intelligent habit tracker for <em>macOS and iOS</em></span></h1>
+  <p class="hero-sub">Miru combines daily habit tracking, weighted tasks and machine learning to reveal which behaviours actually drive your most productive days. Built natively for Mac and iPhone.</p>
+  <div class="hero-buttons">
+    <a href="#download" class="btn-primary">Download for Mac</a>
+    <a href="#app" class="btn-secondary">See how it works</a>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- Story -->
+<section class="story" id="story" aria-label="The story behind Miru">
+  <div class="story-label reveal">The meaning behind Miru</div>
+  <p class="reveal"><strong>Miru (見る)</strong> is a Japanese word that means "to see." Not in the way you glance at a notification or scroll past a chart. In Japanese it carries a deeper sense. It means to observe. To perceive. To look at something carefully enough that you begin to understand it.</p>
+  <div class="story-divider reveal" aria-hidden="true"></div>
+  <p class="reveal">Most habit trackers count your streaks. They give you a number, a checkmark, maybe a confetti animation. But real change isn't about counting. It's about <strong>understanding</strong>.</p>
+  <p class="reveal">You don't fail at habits because you forgot to check a box. You fail because you didn't notice the pattern underneath. You didn't see that you always skip your morning run the day after a late night. You didn't observe that your motivation dips every third week.</p>
+  <p class="reveal">These patterns are already there, hidden in the rhythm of your daily life. You just haven't had a way to see them. <strong>Miru sees them.</strong></p>
+</section>
+
+<!-- App Overview -->
+<section class="app-overview" id="app" aria-label="Core features of Miru habit tracker">
+  <div class="app-overview-inner">
+    <div class="app-overview-header reveal">
+      <h2>Everything you need to build better habits</h2>
+      <p>Four core systems that work together to give you a complete picture of your day.</p>
     </div>
+    <div class="pillars">
+      <article class="pillar reveal">
+        <div class="pillar-icon" style="background: rgba(88,86,214,0.1); color: var(--indigo);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Daily habit tracking</h3>
+        <p>Track daily habits organised by morning, afternoon and evening. Choose from presets across fitness, health, mind and work or build your own. Tap to complete and rate the friction.</p>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-icon" style="background: rgba(196,93,62,0.1); color: var(--accent);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h3>Weighted task system</h3>
+        <p>A productivity-focused to-do list where you assign 1 to 100 points per task based on difficulty. Track daily accomplishments alongside your habits in one unified point system.</p>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-icon" style="background: rgba(139,92,246,0.1); color: var(--purple);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>ML-powered insights</h3>
+        <p>Miru's Machine Learning Engine turn your daily data into a personal behavioural science engine. See what actually drives your productivity score.</p>
+      </article>
+      <article class="pillar reveal">
+        <div class="pillar-icon" style="background: rgba(122,139,111,0.1); color: var(--sage);">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Accountability partners</h3>
+        <p>Pair up with one partner per habit using a simple 8-character code. Share progress on specific habits. No feeds or likes. Just mutual visibility.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Premium Insights -->
+<section class="features" id="insights" aria-label="Miru Premium ML-powered analytics">
+  <div class="features-inner">
+    <div class="features-header reveal">
+      <div class="premium-badge">Miru Premium</div>
+      <h2>Your habit data, decoded by machine learning</h2>
+      <p>After 10+ days of logging, Miru's ML engine unlocks insights you'd never catch on your own.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card reveal">
+        <div class="feature-icon" style="background: rgba(88,86,214,0.15); color: var(--indigo);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>Smart productivity analysis</h3>
+        <div class="method">Miru's Machine Learning Engine</div>
+        <p>Using Miru’s Machine Learning Engine, your habits are translated into simple daily signals and analyzed alongside your task points and productivity rating. Miru then reveals which behaviors are helping, which may be hurting, and how strong the overall pattern is.</p>
+      </article>
+      <article class="feature-card reveal">
+        <div class="feature-icon" style="background: rgba(139,92,246,0.15); color: var(--purple);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <h3>Habit chain discovery</h3>
+        <div class="method">Conditional probability: P(B|A) / P(B|¬A)</div>
+        <p>"You're 3x more likely to meditate on days you journal." Miru computes co-occurrence multipliers across all habit pairs, deduplicates the weaker direction and surfaces the top 10 chains.</p>
+      </article>
+      <article class="feature-card reveal">
+        <div class="feature-icon" style="background: rgba(0,128,128,0.15); color: teal;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+        </div>
+        <h3>Smart scheduling analysis</h3>
+        <div class="method">Completion-hour histogram analysis</div>
+        <p>Every completion is timestamped. Miru builds an hour-frequency histogram per habit, finds your peak completion window and flags misalignments between your declared schedule and real behaviour.</p>
+      </article>
+      <article class="feature-card reveal">
+        <div class="feature-icon" style="background: rgba(255,149,0,0.15); color: orange;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Friction and automaticity tracking</h3>
+        <div class="method">Rolling difficulty trend + automaticity detection</div>
+        <p>After each completion you rate it easy, moderate or hard. Miru averages friction over time. When your last 7 completions are all "Easy," the habit is flagged as automatic. See which behaviours are truly becoming second nature.</p>
+      </article>
+      <article class="feature-card reveal">
+        <div class="feature-icon" style="background: rgba(255,59,48,0.15); color: #ff3b30;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Failure pattern detection</h3>
+        <div class="method">Day-of-week frequency + tagged reason clustering</div>
+        <p>When a streak breaks Miru detects it automatically (requiring 2+ days of prior consistency) and asks what happened: travel, sick, busy, forgot, low energy or lost motivation. Over time it maps your obstacles by day and reason.</p>
+      </article>
+      <article class="feature-card reveal">
+        <div class="feature-icon" style="background: rgba(122,139,111,0.15); color: var(--sage);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Energy-adaptive recommendations</h3>
+        <div class="method">Combined energy + mood scoring (1-10)</div>
+        <p>Miru’s Machine Learning Engine takes your daily energy and mood into account. On low-energy days, it recommends gentler habits to keep momentum alive. On high-energy days, it nudges you toward the habits most associated with your most productive days.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how" id="how" aria-label="How Miru habit tracker works">
+  <div class="how-header reveal">
+    <h2>How to start tracking habits with Miru</h2>
+  </div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-number" aria-hidden="true">01</div>
+      <div>
+        <h3>Set up your daily habits</h3>
+        <p>Choose from presets across fitness, health, mind and work or create custom habits with your own icon, colour and point value. Assign each habit to morning, afternoon, evening or any time.</p>
+        <span class="tag tag-free">Free</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-number" aria-hidden="true">02</div>
+      <div>
+        <h3>Track and rate daily</h3>
+        <p>Tap to complete habits and add weighted tasks throughout the day. After each habit Miru asks "How did that feel?" and you rate the friction: easy, moderate or hard. At the end of the day log your productivity score (1-10), energy and mood.</p>
+        <span class="tag tag-free">Free</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-number" aria-hidden="true">03</div>
+      <div>
+        <h3>Machine learning builds your model</h3>
+        <p>After 10 days of data, Miru’s Machine Learning Engine comes to life. It studies your completed habits, links them to your productivity ratings, and begins revealing the patterns behind your best days. A progress bar lets you see exactly how close you are to unlocking your insights.</p>
+        <span class="tag tag-premium">Premium</span>
+      </div>
+    </div>
+    <div class="step reveal">
+      <div class="step-number" aria-hidden="true">04</div>
+      <div>
+        <h3>Actionable insights surface</h3>
+        <p>See exactly which habits boost or drain your productivity, which ones trigger each other, where your schedule is misaligned and which streaks are at risk. The model improves with every day you log.</p>
+        <span class="tag tag-premium">Premium</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO: Science section for informational keywords -->
+<section class="science" id="science" aria-label="The science behind habit tracking">
+  <h2 class="reveal">The science of effective habit tracking</h2>
+  <p class="reveal"><strong>Research shows that self-monitoring is one of the most effective techniques for behaviour change.</strong> A <a href="https://pubmed.ncbi.nlm.nih.gov/26479070/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">meta-analysis of 138 studies covering over 19,000 participants</a> found that people who systematically track their habits are significantly more likely to achieve their goals than those who rely on memory or motivation alone.</p>
+  <p class="reveal">Most people believe it takes 21 days to form a habit. The actual research tells a different story: a <a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">study from University College London</a> found that <strong>it takes an average of 66 days</strong>, with a range of 18 to 254 days depending on the complexity of the behaviour. Simple habits like drinking water become automatic quickly. Complex habits like daily exercise can take months.</p>
+  <p class="reveal">This is why Miru tracks friction, not just completion. When you rate each habit as easy, moderate or hard, you're measuring something most trackers ignore: <strong>how automatic the behaviour has become</strong>. Seven consecutive "easy" ratings signal that a habit has crossed the threshold from deliberate effort to genuine routine.</p>
+  <p class="reveal">Habit stacking, the practice of anchoring new habits to existing ones, is another evidence-based technique. Miru's habit chain discovery takes this further by using your own data to <strong>find which habits naturally co-occur</strong> in your life, revealing connections you might never notice on your own.</p>
+  <div class="privacy-note reveal">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+    <span>Your data never leaves your device. All ML analysis runs locally on your Mac.</span>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing" aria-label="Miru pricing plans">
+  <div class="pricing-inner">
+    <h2 class="reveal">Simple pricing for your habit tracker</h2>
+    <p class="reveal">Start free. Upgrade when you're ready to see what's underneath.</p>
+    <div class="pricing-cards">
+      <div class="pricing-card reveal">
+        <h3>Free</h3>
+        <div class="price">€0 <span>/ forever</span></div>
+        <div class="price-note">No credit card required</div>
+        <ul>
+          <li>Unlimited daily habits with time-of-day scheduling</li>
+          <li>Preset library (fitness, health, mind and work)</li>
+          <li>Weighted task system (1-100 points)</li>
+          <li>Friction scoring after each completion</li>
+          <li>Streak tracking with automatic break detection</li>
+          <li>Daily energy and mood logging</li>
+          <li>Accountability partner pairing</li>
+          <li>Energy-adaptive daily recommendations</li>
+        </ul>
+      </div>
+      <div class="pricing-card featured reveal">
+        <h3>Premium</h3>
+        <div class="price">€3.99 <span>/ month</span></div>
+        <div class="price-note">Cancel anytime. Renews monthly.</div>
+        <ul>
+          <li>Everything in Free</li>
+          <li>Personalized productivity insights from Miru’s ML Engine</li>
+          <li>Hidden connections between your daily habits</li>
+          <li>Smart scheduling vs. actual behaviour analysis</li>
+          <li>Friction trend and automaticity detection</li>
+          <li>Failure pattern breakdowns by day and reason</li>
+          <li>Model quality dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO: FAQ section targeting People Also Ask queries -->
+<section class="faq" id="faq" aria-label="Frequently asked questions about Miru habit tracker">
+  <h2 class="reveal">Frequently asked questions</h2>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">Do habit trackers actually work?</h3>
+    <p>Yes. A <a href="https://pubmed.ncbi.nlm.nih.gov/26479070/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">meta-analysis of 138 studies</a> covering over 19,000 participants found that self-monitoring significantly increases goal attainment. The key is tracking consistently and reviewing your data. Miru goes further by using machine learning to surface patterns you'd miss on your own.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">What makes Miru different from other habit trackers?</h3>
+    <p>Most habit trackers stop at streaks and checkmarks. Miru uses its machine learning engine to model which habits statistically predict your best productivity days and conditional probability to discover hidden chains between habits. It shows the math, not just the result.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">Is Miru free to use?</h3>
+    <p>Yes. The free tier includes unlimited habits, tasks, friction scoring, streak tracking, energy-based recommendations and accountability partners. Premium (€3.99/month) unlocks the ML-powered insights: productivity analysis, habit chains, smart scheduling and failure patterns.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">How does machine learning work in a habit tracker?</h3>
+    <p>Once you’ve logged 10 days of data, Miru’s Machine Learning Engine comes to life. It studies your completed habits, links them to your productivity scores, and reveals hidden patterns between your behaviors. Your data stays private, because all analysis runs directly on your device.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">How long does it take to build a habit?</h3>
+    <p><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline; text-underline-offset: 3px;">Research from University College London</a> found it takes an average of 66 days, with a range of 18 to 254 days depending on the habit's complexity. Miru's friction scoring helps you track this progression: when seven consecutive completions are rated "easy," the habit has likely become automatic.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">How many habits should I track at once?</h3>
+    <p>Most experts recommend starting with 3 to 5 habits. Tracking too many at once spreads your willpower thin. Miru's Machine Learning Engine helps you identify which habits have the biggest positive impact so you can focus your energy where it matters most.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">Can I track habits on my Mac without using my phone?</h3>
+    <p>Yes. Miru is built natively for macOS. If you spend your workday at a Mac, you can track habits, complete tasks and log your daily scores without ever picking up your phone.</p>
+  </div>
+
+  <div class="faq-item reveal">
+    <h3 onclick="this.parentElement.classList.toggle('open')">Is my habit data private?</h3>
+    <p>Yes. All data stays on your device. Miru does not send your habit data to any server. The machine learning analysis runs locally using on-device computation. No account required.</p>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote-section" aria-label="Miru philosophy">
+  <blockquote class="reveal">"Before you can shape your days you have to see them clearly. Once you truly see your patterns, changing them becomes the easy part."</blockquote>
+  <cite class="reveal">The philosophy behind Miru</cite>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="download" aria-label="Download Miru habit tracker for macOS">
+  <div class="cta-kanji" aria-hidden="true">見</div>
+  <h2 class="reveal">Ready to <em>see</em> your patterns?</h2>
+  <p class="reveal">Download Miru and start building habits backed by data.</p>
+  <a href="#" class="btn-primary reveal" aria-label="Download Miru habit tracker for macOS">Download for Mac</a>
+  <div class="cta-note reveal">Available on macOS.</div>
+</section>
+
+<footer>
+  <div class="footer-logo">Miru</div>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+    <a href="#">Support</a>
+    <a href="#">Twitter</a>
   </nav>
+  <div class="footer-copy">&copy; 2026 Miru. All rights reserved.</div>
+</footer>
 
-  <header class="hero">
-    <div class="hero-kanji" aria-hidden="true">見る</div>
-    <div class="hero-label">Legal</div>
-    <h1>Privacy Policy</h1>
-    <p>This policy explains how Miru handles your information and how your data is used inside the app.</p>
-  </header>
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
-  <main class="content">
-    <section class="card">
-      <div class="meta">Effective date: [Month Day, Year]</div>
-      <p>Miru is a habit tracker and reflection app. This Privacy Policy explains how Miru collects, uses, stores and protects information when you use the app or related services.</p>
-      <div class="note">Miru is designed with a privacy-first approach. Based on the current app setup, most personal habit and reflection data is intended to stay on your device unless future sync or external services are introduced.</div>
-    </section>
-
-    <section class="card">
-      <h2>1. Information Miru may collect</h2>
-      <ul>
-        <li>Habit data, including habit names, schedules, completion history, streaks, skips and friction ratings</li>
-        <li>Task data, including tasks, subtasks, projects, due dates and completion status</li>
-        <li>Daily reflection data, including productivity, energy and mood scores</li>
-        <li>Reading data, including books, current progress and reading status</li>
-        <li>Accountability data, including partner codes and locally stored partner connections</li>
-        <li>Subscription status needed to determine access to premium features</li>
-        <li>Basic device or app identifiers used to support app functionality</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>2. How Miru uses information</h2>
-      <ul>
-        <li>provide the core app experience</li>
-        <li>save and display your entries, progress and history</li>
-        <li>generate insights, recommendations and pattern analysis</li>
-        <li>support reminders and notifications you choose to enable</li>
-        <li>support subscriptions and premium access</li>
-        <li>maintain app reliability and performance</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>3. Data storage</h2>
-      <p>Your data may be stored locally on your device. If Miru adds cloud sync, external analytics, crash reporting or other online infrastructure in the future, this Privacy Policy may be updated to reflect those changes.</p>
-    </section>
-
-    <section class="card">
-      <h2>4. Notifications</h2>
-      <p>If you enable reminders, Miru may schedule local notifications on your device. You can manage notification permissions at any time in your device settings.</p>
-    </section>
-
-    <section class="card">
-      <h2>5. Subscriptions and payments</h2>
-      <p>If you subscribe to Miru Premium through Apple, payments are processed by Apple through your Apple ID account. Miru does not directly receive or store your full payment card details.</p>
-    </section>
-
-    <section class="card">
-      <h2>6. Data sharing</h2>
-      <p>Miru does not sell personal data. Data may be shared only in limited circumstances, such as with Apple where needed for app distribution, subscriptions or platform functionality, with service providers if Miru later uses infrastructure like analytics or cloud storage, or where disclosure is required by law.</p>
-    </section>
-
-    <section class="card">
-      <h2>7. Data retention</h2>
-      <p>Miru keeps your information for as long as needed to provide app functionality, unless you delete it or a longer retention period is required by law.</p>
-    </section>
-
-    <section class="card">
-      <h2>8. Your rights</h2>
-      <p>Depending on where you live, you may have rights to access, correct, delete or restrict the use of your personal data.</p>
-      <p>If you have a privacy-related question or want to request deletion, contact <a href="mailto:[support@email.com]">[support@email.com]</a>.</p>
-    </section>
-
-    <section class="card">
-      <h2>9. Children’s privacy</h2>
-      <p>Miru is not directed to children under 13 and is not intended to knowingly collect personal data from children under 13.</p>
-    </section>
-
-    <section class="card">
-      <h2>10. Security</h2>
-      <p>Miru takes reasonable steps to protect information, but no method of storage or transmission can be guaranteed to be completely secure.</p>
-    </section>
-
-    <section class="card">
-      <h2>11. Changes to this policy</h2>
-      <p>This Privacy Policy may be updated from time to time. If changes are made, the updated version will be posted with a new effective date.</p>
-    </section>
-
-    <section class="card">
-      <h2>12. Contact</h2>
-      <p>If you have questions about this Privacy Policy, contact:</p>
-      <p>Miru<br>[support@email.com]<br>[Business or mailing address]<br><a href="https://miru.app">miru.app</a></p>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-logo">Miru</div>
-    <nav class="footer-links" aria-label="Footer navigation">
-      <a href="/privacy">Privacy</a>
-      <a href="/terms">Terms</a>
-      <a href="/">Home</a>
-    </nav>
-    <div class="footer-copy">&copy; 2026 Miru. All rights reserved.</div>
-  </footer>
 </body>
 </html>
